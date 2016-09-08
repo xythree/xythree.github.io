@@ -1,0 +1,24 @@
+<morelistbox></morelistbox>
+
+<div class="iwrap" :class="{'right-transition': rightTransition}" :style="iwrapStyle">
+
+    <div class="ihead_box">
+        <div class="ihead_child imore" @click="showMore">more</div>
+        <div class="ihead_child ititle">{{title}}</div>
+        <div class="ihead_child icenter" @click="centerShow">center</div>
+    </div>
+
+    <div class="ibody_box" :style="bodyStyle">
+        <homebox v-show="home" ></homebox>
+        <addresslistbox v-show="addressList"></addresslistbox>
+        <setbox v-show="set"></setbox>
+    </div>
+
+    <div class="ifoot_box">
+        <div @click="iconToggle($index)" :class="{'icon': true, 'icon_index': $index == iconIndex}" v-for="icon in iconData">{{icon}}</div>
+    </div>
+    <centerbox></centerbox>
+    <photolistbox v-ref:photolistbox ></photolistbox>
+    <loadingbox v-show="loadingShow" ></loadingbox>
+</div>
+<alertbox></alertbox>
