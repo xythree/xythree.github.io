@@ -1,0 +1,12 @@
+<div class="home_box" @scroll="scroll">
+    <ul class="home_list" >
+        <li v-for="item in homeData" track-by="$index" @click="alert({title: $index, content:item.content})" >
+            <img :src="item.src">
+            <p>{{item.content}}</p>
+        </li>
+    </ul>
+    <div class="home_loading_box" v-show="homeLoadingStatus" >loading...</div>
+</div>
+
+
+
